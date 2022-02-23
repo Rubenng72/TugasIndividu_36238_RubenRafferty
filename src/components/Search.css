@@ -1,0 +1,8 @@
+.Searching {
+  --background: white;
+  --cancel-button-color: grey;
+}
+
+.hover {
+  --indicator-color: black;
+}

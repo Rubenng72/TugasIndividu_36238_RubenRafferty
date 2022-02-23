@@ -1,0 +1,71 @@
+.container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+ion-fab-button {
+  --background: white;
+  --color: black;
+}
+.Fabcenter {
+  /* left: 52%;
+  transform: translate(-50%, 0%); */
+  margin-left: unset;
+  margin-inline-start: -85px;
+}
+
+.decoration {
+  --background: white;
+  --color: rgb(216, 147, 90);
+  --border-radius: 20px;
+}
+
+ion-buttons {
+  margin-right: 20px;
+}
+
+ion-card::shadow(native) {
+  padding: 0;
+}
+
+.bottom-left {
+  position: absolute;
+  text-align: start;
+  font-size: 20px;
+  font-weight: 600;
+  bottom: 50px;
+  left: 16px;
+}
+
+.bottom-right {
+  font-size: 13px;
+  font-weight: 700;
+  position: absolute;
+  bottom: 50px;
+  right: 16px;
+  text-decoration: underline;
+}
+
+.dividing-line {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  font-size: 12px;
+  font-weight: 600;
+  color: gray;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.dividing-line::before,
+.dividing-line::after {
+  content: "";
+  height: 1px;
+  background-color: silver;
+  flex-grow: 1;
+  margin: 0 10px;
+}

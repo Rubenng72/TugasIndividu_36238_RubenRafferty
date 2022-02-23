@@ -11,7 +11,7 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { archiveOutline, archiveSharp, bookmarkOutline, bulbOutline, chatbox, chatboxOutline, cogOutline, heartOutline, heartSharp, helpCircleOutline, homeOutline, mailOutline, mailSharp, openOutline, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -23,44 +23,32 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/page/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    title: 'Home',
+    url: '/Home',
+    iosIcon: homeOutline,
+    mdIcon: homeOutline
   },
   {
-    title: 'Outbox',
-    url: '/page/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    title: 'Tips&Tricks',
+    url: '/Tips & Tricks',
+    iosIcon: bulbOutline,
+    mdIcon: bulbOutline
   },
   {
-    title: 'Favorites',
-    url: '/page/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
+    title: 'Help&Support',
+    url: '/Help & Support',
+    iosIcon: helpCircleOutline,
+    mdIcon: helpCircleOutline
   },
   {
-    title: 'Archived',
-    url: '/page/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
-  },
-  {
-    title: 'Trash',
-    url: '/page/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
-  },
-  {
-    title: 'Spam',
-    url: '/page/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
+    title: 'Settings',
+    url: '/Settings',
+    iosIcon: cogOutline,
+    mdIcon: cogOutline
   }
 ];
 
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+
 
 const Menu: React.FC = () => {
   const location = useLocation();
@@ -69,8 +57,6 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
@@ -82,16 +68,13 @@ const Menu: React.FC = () => {
             );
           })}
         </IonList>
-
-        <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonIcon slot="start" icon={bookmarkOutline} />
-              <IonLabel>{label}</IonLabel>
-            </IonItem>
-          ))}
-        </IonList>
+        <div className='talk'>
+        <IonIcon className="talkicon" icon={chatbox}/>
+        <div className='talk2'><p> Get your claws around<br/> Joule today!</p>
+        <a style={{color:'orange'}}>Check it out</a> <IonIcon style={{color: 'orange'}} icon={openOutline}/>
+        </div>
+        <img style={{marginLeft : 'auto', marginRight:'auto',display:"block", marginTop:'0%'}} src='assets/foto/crab.png' alt ='crab' height={'200px'} width={'200px'}></img>
+      </div>
       </IonContent>
     </IonMenu>
   );
